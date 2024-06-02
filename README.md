@@ -186,16 +186,6 @@ done();
 
 Lastly, we included all the other test cases inside the Describe block, each test case tests a particular behavior or implementation of a feature.
 
-## Running the Test
-
-To run your test, type the following command into your root terminal.
-
-``` bash
-yarn start
-
-yarn test
-```
-
 After successfully running the test, you should be greeted with green passes for your test, like the screenshot below:
 
 So far, we have manually run the test with the command above to ensure that our test is passing before we move ahead to deploy.
@@ -207,6 +197,79 @@ This certification provides the comprehensive knowledge and necessary skills req
 Software testing is a way to ensure that the software under test (SUT) conforms with the requirements during or after development. It is a very important aspect of software engineering as it reduces bugs and deployment of defective software products.
 
 Mocha, combined with Chai, is a powerful tool for performing NodeJS unit testing using either the BDD or TDD approach. It’s a flexible JavaScript testing framework that makes testing simple and more flexible.
+
+<h3>Test-Driven Development (TDD)</h3>
+
+<h4>Definition:</h4>
+
+TDD is a software development process where you write tests for your code before writing the actual code. It follows a strict cycle known as "Red-Green-Refactor."
+
+<h4>Cycle:</h4>
+
+1. <b>Red:</b> Write a test for a new function or feature. Since the function is not yet implemented, the test should fail (hence "red").
+2. <b>Green:</b> Write the minimum amount of code necessary to make the test pass. This typically means just implementing the new function or feature.
+3. <b>Refactor:</b> Clean up the code, improving its structure and removing any duplication, while ensuring that the tests still pass.
+
+<h4>Benefits:</h4>
+
+- Ensures that your code is thoroughly tested from the outset.
+- Encourages simple design and discourages unnecessary complexity.
+- Helps catch bugs early in the development process.
+
+<h4>Example:</h4>  
+
+``` javascript
+// Step 1: Write a failing test
+describe('Addition function', () => {
+  it('should add two numbers correctly', () => {
+    expect(add(2, 3)).to.equal(5);
+  });
+});
+
+// Step 2: Write the minimum code to pass the test
+function add(a, b) {
+  return a + b;
+}
+
+// Step 3: Refactor the code if necessary (in this simple case, there may be no need)
+```
+
+<h3>Behavior-Driven Development (BDD)</h3>
+
+<h4>Definition:</h4>
+
+BDD extends TDD by combining the general techniques and principles of TDD with ideas from domain-driven design and object-oriented analysis and design. BDD focuses on the behavioral aspects of the system and communication between stakeholders.
+
+<h4>Key Concepts:</h4>
+
+- <b>User Stories:</b> Descriptions of features from the perspective of the end user.
+- <b>Scenarios:</b> Specific examples of how a feature should behave in different situations.
+- <b>Given-When-Then:</b> A format for writing scenarios that describe the initial context (Given), the event or action (When), and the expected outcome (Then).
+
+<h4>Benefits:</h4>
+
+- Enhances communication among developers, testers, and non-technical stakeholders.
+- Ensures that development is aligned with business requirements.
+- Makes tests more readable and easier to understand.
+
+<h4>Example:</h4>  
+
+``` javascript
+// Using Mocha and Chai for BDD-style tests
+describe('Addition feature', () => {
+  context('Given two numbers', () => {
+    context('When they are added', () => {
+      it('Then it should return the sum of the numbers', () => {
+        expect(add(2, 3)).to.equal(5);
+      });
+    });
+  });
+});
+
+function add(a, b) {
+  return a + b;
+}
+```
 
 In this NodeJS unit testing, we explored how to perform NodeJS unit testing with Mocha and Chai.
 
