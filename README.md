@@ -164,5 +164,21 @@ function add(a, b) {
 }
 ```
 
+<h3>Differences Between TDD and BDD</h3>
+
+- <h4>Focus:</h4>
+      <b>TDD:</b> Focuses on writing tests before coding to drive design and ensure correctness.</br>
+      <b>BDD:</b> Focuses on the behavior of the application from the user's perspective and aims to improve communication among team members.
+
+- <h4>Language:</h4>
+      <b>TDD:</b> Test cases are often written in a technical language focused on the implementation.</br>
+      <b>BDD:</b> Test cases are written in a more natural language that describes the behavior of the system in terms of user stories and scenarios.
+
+- <h4>Stakeholders:</h4>
+      <b>TDD:</b> Primarily involves developers.</br>
+      <b>BDD:</b> Involves developers, testers, and non-technical stakeholders like product owners or business analysts.
+
+Both TDD and BDD aim to improve the quality and reliability of the codebase through testing, but BDD goes a step further in enhancing collaboration and ensuring that the developed features meet business requirements.  
+
 In this NodeJS unit testing, we explored how to perform NodeJS unit testing with Mocha and Chai.
 
